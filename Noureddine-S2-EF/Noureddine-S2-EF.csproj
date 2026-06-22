@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AideImpression.cs" />
     <Compile Include="FrmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>

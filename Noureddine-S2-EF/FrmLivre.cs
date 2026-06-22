@@ -24,6 +24,7 @@ namespace Noureddine_S2_EF
             da.Fill(dt);
 
             dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ReadOnly = true;
 
             con.Close();

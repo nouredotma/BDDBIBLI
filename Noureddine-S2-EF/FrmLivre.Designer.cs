@@ -25,15 +25,19 @@ namespace Noureddine_S2_EF
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(880, 360);
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.TabIndex = 0;
             // 
             // btnFermer
             // 
-            this.btnFermer.Location = new System.Drawing.Point(350, 385);
+            this.btnFermer.Location = new System.Drawing.Point(402, 385);
+            this.btnFermer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(100, 35);
             this.btnFermer.TabIndex = 1;
@@ -45,7 +49,7 @@ namespace Noureddine_S2_EF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 440);
+            this.ClientSize = new System.Drawing.Size(904, 430);
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

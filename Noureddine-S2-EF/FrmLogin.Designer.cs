@@ -28,35 +28,36 @@ namespace Noureddine_S2_EF
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitre.Location = new System.Drawing.Point(80, 30);
+            this.lblTitre.Location = new System.Drawing.Point(200, 51);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(340, 29);
+            this.lblTitre.Size = new System.Drawing.Size(256, 29);
             this.lblTitre.TabIndex = 0;
-            this.lblTitre.Text = "Bibliothèque - Espace Admin";
+            this.lblTitre.Text = "Bibli - Espace Admin";
+            this.lblTitre.Click += new System.EventHandler(this.lblTitre_Click);
             // 
             // lblMotDePasse
             // 
             this.lblMotDePasse.AutoSize = true;
-            this.lblMotDePasse.Location = new System.Drawing.Point(85, 100);
+            this.lblMotDePasse.Location = new System.Drawing.Point(115, 128);
             this.lblMotDePasse.Name = "lblMotDePasse";
-            this.lblMotDePasse.Size = new System.Drawing.Size(88, 16);
+            this.lblMotDePasse.Size = new System.Drawing.Size(89, 16);
             this.lblMotDePasse.TabIndex = 1;
             this.lblMotDePasse.Text = "Mot de passe";
             // 
             // txtMotDePasse
             // 
-            this.txtMotDePasse.Location = new System.Drawing.Point(200, 97);
+            this.txtMotDePasse.Location = new System.Drawing.Point(235, 125);
             this.txtMotDePasse.Name = "txtMotDePasse";
             this.txtMotDePasse.PasswordChar = '*';
-            this.txtMotDePasse.Size = new System.Drawing.Size(220, 22);
+            this.txtMotDePasse.Size = new System.Drawing.Size(280, 22);
             this.txtMotDePasse.TabIndex = 2;
             // 
             // btnConnexion
             // 
             this.btnConnexion.BackColor = System.Drawing.Color.LightGreen;
-            this.btnConnexion.Location = new System.Drawing.Point(120, 160);
+            this.btnConnexion.Location = new System.Drawing.Point(155, 198);
             this.btnConnexion.Name = "btnConnexion";
-            this.btnConnexion.Size = new System.Drawing.Size(120, 40);
+            this.btnConnexion.Size = new System.Drawing.Size(140, 45);
             this.btnConnexion.TabIndex = 3;
             this.btnConnexion.Text = "Connexion";
             this.btnConnexion.UseVisualStyleBackColor = false;
@@ -65,9 +66,9 @@ namespace Noureddine_S2_EF
             // btnQuitter
             // 
             this.btnQuitter.BackColor = System.Drawing.Color.LightGray;
-            this.btnQuitter.Location = new System.Drawing.Point(260, 160);
+            this.btnQuitter.Location = new System.Drawing.Point(335, 198);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(120, 40);
+            this.btnQuitter.Size = new System.Drawing.Size(140, 45);
             this.btnQuitter.TabIndex = 4;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
@@ -78,7 +79,7 @@ namespace Noureddine_S2_EF
             this.AcceptButton = this.btnConnexion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 250);
+            this.ClientSize = new System.Drawing.Size(620, 300);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.txtMotDePasse);
@@ -91,6 +92,7 @@ namespace Noureddine_S2_EF
             this.Text = "FrmLogin";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

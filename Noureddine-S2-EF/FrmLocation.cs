@@ -34,6 +34,7 @@ namespace Noureddine_S2_EF
             da.Fill(dt);
 
             dgvLocations.DataSource = dt;
+            dgvLocations.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             con.Close();
         }
 
@@ -152,41 +153,19 @@ namespace Noureddine_S2_EF
 
         private void btnImprimer_Click(object sender, EventArgs e)
         {
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Aucune location à imprimer.");
+                return;
+            }
+
             i = 0;
-            printPreviewDialog1.ShowDialog();
+            AideImpression.OuvrirGrandApercu(printPreviewDialog1);
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            Font f1 = new Font("Arial", 12, FontStyle.Bold);
-            Font f2 = new Font("Arial", 10);
-
-            int x = 50;
-            int y = 50;
-
-            e.Graphics.DrawString("Liste des locations", f1, Brushes.Black, x, y);
-            y = y + 40;
-
-            while (i < dt.Rows.Count)
-            {
-                string ligne = dt.Rows[i][0].ToString() + "  "
-                    + dt.Rows[i][1].ToString() + "  "
-                    + dt.Rows[i][2].ToString() + "  "
-                    + dt.Rows[i][3].ToString() + "  "
-                    + dt.Rows[i][5].ToString();
-
-                e.Graphics.DrawString(ligne, f2, Brushes.Black, x, y);
-                y = y + 25;
-                i++;
-
-                if (y > e.MarginBounds.Bottom)
-                {
-                    e.HasMorePages = true;
-                    return;
-                }
-            }
-
-            e.HasMorePages = false;
+            AideImpression.DessinerTableLocations(e.Graphics, dt, ref i, "Liste des locations", e);
         }
     }
 }

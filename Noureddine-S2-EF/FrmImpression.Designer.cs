@@ -17,9 +17,8 @@ namespace Noureddine_S2_EF
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmImpression));
             this.grpMenu = new System.Windows.Forms.GroupBox();
-            this.lblOption1 = new System.Windows.Forms.Label();
-            this.lblOption2 = new System.Windows.Forms.Label();
             this.grpLocationsDates = new System.Windows.Forms.GroupBox();
             this.btnImprimerLocations = new System.Windows.Forms.Button();
             this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
@@ -27,6 +26,8 @@ namespace Noureddine_S2_EF
             this.lblDateFin = new System.Windows.Forms.Label();
             this.lblDateDebut = new System.Windows.Forms.Label();
             this.lblOption3 = new System.Windows.Forms.Label();
+            this.lblOption2 = new System.Windows.Forms.Label();
+            this.lblOption1 = new System.Windows.Forms.Label();
             this.btnFermer = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
@@ -40,32 +41,12 @@ namespace Noureddine_S2_EF
             this.grpMenu.Controls.Add(this.lblOption3);
             this.grpMenu.Controls.Add(this.lblOption2);
             this.grpMenu.Controls.Add(this.lblOption1);
-            this.grpMenu.Location = new System.Drawing.Point(20, 20);
+            this.grpMenu.Location = new System.Drawing.Point(100, 58);
             this.grpMenu.Name = "grpMenu";
             this.grpMenu.Size = new System.Drawing.Size(560, 280);
             this.grpMenu.TabIndex = 0;
             this.grpMenu.TabStop = false;
             this.grpMenu.Text = "Sous-menu impression";
-            // 
-            // lblOption1
-            // 
-            this.lblOption1.AutoSize = true;
-            this.lblOption1.ForeColor = System.Drawing.Color.Gray;
-            this.lblOption1.Location = new System.Drawing.Point(20, 35);
-            this.lblOption1.Name = "lblOption1";
-            this.lblOption1.Size = new System.Drawing.Size(155, 16);
-            this.lblOption1.TabIndex = 0;
-            this.lblOption1.Text = "• Imprimer les adhérents";
-            // 
-            // lblOption2
-            // 
-            this.lblOption2.AutoSize = true;
-            this.lblOption2.ForeColor = System.Drawing.Color.Gray;
-            this.lblOption2.Location = new System.Drawing.Point(20, 65);
-            this.lblOption2.Name = "lblOption2";
-            this.lblOption2.Size = new System.Drawing.Size(133, 16);
-            this.lblOption2.TabIndex = 1;
-            this.lblOption2.Text = "• Imprimer les livres";
             // 
             // grpLocationsDates
             // 
@@ -113,7 +94,7 @@ namespace Noureddine_S2_EF
             this.lblDateFin.AutoSize = true;
             this.lblDateFin.Location = new System.Drawing.Point(20, 58);
             this.lblDateFin.Name = "lblDateFin";
-            this.lblDateFin.Size = new System.Drawing.Size(67, 16);
+            this.lblDateFin.Size = new System.Drawing.Size(58, 16);
             this.lblDateFin.TabIndex = 1;
             this.lblDateFin.Text = "Date fin :";
             // 
@@ -122,7 +103,7 @@ namespace Noureddine_S2_EF
             this.lblDateDebut.AutoSize = true;
             this.lblDateDebut.Location = new System.Drawing.Point(20, 28);
             this.lblDateDebut.Name = "lblDateDebut";
-            this.lblDateDebut.Size = new System.Drawing.Size(84, 16);
+            this.lblDateDebut.Size = new System.Drawing.Size(79, 16);
             this.lblDateDebut.TabIndex = 0;
             this.lblDateDebut.Text = "Date début :";
             // 
@@ -131,13 +112,33 @@ namespace Noureddine_S2_EF
             this.lblOption3.AutoSize = true;
             this.lblOption3.Location = new System.Drawing.Point(20, 95);
             this.lblOption3.Name = "lblOption3";
-            this.lblOption3.Size = new System.Drawing.Size(289, 16);
+            this.lblOption3.Size = new System.Drawing.Size(259, 16);
             this.lblOption3.TabIndex = 2;
             this.lblOption3.Text = "• Imprimer les locations entre deux dates ↓";
             // 
+            // lblOption2
+            // 
+            this.lblOption2.AutoSize = true;
+            this.lblOption2.ForeColor = System.Drawing.Color.Gray;
+            this.lblOption2.Location = new System.Drawing.Point(20, 65);
+            this.lblOption2.Name = "lblOption2";
+            this.lblOption2.Size = new System.Drawing.Size(125, 16);
+            this.lblOption2.TabIndex = 1;
+            this.lblOption2.Text = "• Imprimer les livres";
+            // 
+            // lblOption1
+            // 
+            this.lblOption1.AutoSize = true;
+            this.lblOption1.ForeColor = System.Drawing.Color.Gray;
+            this.lblOption1.Location = new System.Drawing.Point(20, 35);
+            this.lblOption1.Name = "lblOption1";
+            this.lblOption1.Size = new System.Drawing.Size(153, 16);
+            this.lblOption1.TabIndex = 0;
+            this.lblOption1.Text = "• Imprimer les adhérents";
+            // 
             // btnFermer
             // 
-            this.btnFermer.Location = new System.Drawing.Point(250, 320);
+            this.btnFermer.Location = new System.Drawing.Point(330, 358);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(100, 35);
             this.btnFermer.TabIndex = 1;
@@ -156,6 +157,7 @@ namespace Noureddine_S2_EF
             this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
             this.printPreviewDialog1.Document = this.printDocument1;
             this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
@@ -163,7 +165,7 @@ namespace Noureddine_S2_EF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 370);
+            this.ClientSize = new System.Drawing.Size(750, 450);
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.grpMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -171,11 +173,13 @@ namespace Noureddine_S2_EF
             this.Name = "FrmImpression";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmImpression";
+            this.Load += new System.EventHandler(this.FrmImpression_Load);
             this.grpMenu.ResumeLayout(false);
             this.grpMenu.PerformLayout();
             this.grpLocationsDates.ResumeLayout(false);
             this.grpLocationsDates.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion

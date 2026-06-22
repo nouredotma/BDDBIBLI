@@ -19,62 +19,56 @@ namespace Noureddine_S2_EF
             InitializeComponent();
         }
 
+        private void FrmImpression_Load(object sender, EventArgs e)
+        {
+            // Dates par défaut = données de la base (juin 2025)
+            dtpDateDebut.Value = new DateTime(2025, 6, 1);
+            dtpDateFin.Value = new DateTime(2025, 6, 30);
+        }
+
         private void btnImprimerLocations_Click(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection(chaine);
-            con.Open();
-
-            string sql = "SELECT * FROM location WHERE datelocation BETWEEN @debut AND @fin";
-            MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
-            da.SelectCommand.Parameters.AddWithValue("@debut", dtpDateDebut.Value.ToString("yyyy-MM-dd"));
-            da.SelectCommand.Parameters.AddWithValue("@fin", dtpDateFin.Value.ToString("yyyy-MM-dd"));
-
-            dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-
-            if (dt.Rows.Count == 0)
+            if (dtpDateDebut.Value.Date > dtpDateFin.Value.Date)
             {
-                MessageBox.Show("Aucune location trouvée.");
+                MessageBox.Show("La date de début doit être avant la date de fin.");
                 return;
             }
 
-            i = 0;
-            printPreviewDialog1.ShowDialog();
+            try
+            {
+                MySqlConnection con = new MySqlConnection(chaine);
+                con.Open();
+
+                string sql = "SELECT * FROM location WHERE datelocation BETWEEN @debut AND @fin";
+                MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
+                da.SelectCommand.Parameters.AddWithValue("@debut", dtpDateDebut.Value.Date);
+                da.SelectCommand.Parameters.AddWithValue("@fin", dtpDateFin.Value.Date);
+
+                dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Aucune location trouvée entre ces deux dates.");
+                    return;
+                }
+
+                i = 0;
+                AideImpression.OuvrirGrandApercu(printPreviewDialog1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur : " + ex.Message);
+            }
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            Font f1 = new Font("Arial", 12, FontStyle.Bold);
-            Font f2 = new Font("Arial", 10);
+            string titre = "Locations entre " + dtpDateDebut.Value.ToShortDateString()
+                + " et " + dtpDateFin.Value.ToShortDateString();
 
-            int x = 50;
-            int y = 50;
-
-            e.Graphics.DrawString("Locations entre " + dtpDateDebut.Value.ToShortDateString()
-                + " et " + dtpDateFin.Value.ToShortDateString(), f1, Brushes.Black, x, y);
-            y = y + 40;
-
-            while (i < dt.Rows.Count)
-            {
-                string ligne = dt.Rows[i][0].ToString() + "  "
-                    + dt.Rows[i][1].ToString() + "  "
-                    + dt.Rows[i][2].ToString() + "  "
-                    + dt.Rows[i][3].ToString() + "  "
-                    + dt.Rows[i][5].ToString();
-
-                e.Graphics.DrawString(ligne, f2, Brushes.Black, x, y);
-                y = y + 25;
-                i++;
-
-                if (y > e.MarginBounds.Bottom)
-                {
-                    e.HasMorePages = true;
-                    return;
-                }
-            }
-
-            e.HasMorePages = false;
+            AideImpression.DessinerTableLocations(e.Graphics, dt, ref i, titre, e);
         }
 
         private void btnFermer_Click(object sender, EventArgs e)

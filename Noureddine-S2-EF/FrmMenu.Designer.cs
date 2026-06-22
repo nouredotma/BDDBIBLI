@@ -30,17 +30,17 @@ namespace Noureddine_S2_EF
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitre.Location = new System.Drawing.Point(120, 25);
+            this.lblTitre.Location = new System.Drawing.Point(257, 55);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(260, 29);
+            this.lblTitre.Size = new System.Drawing.Size(84, 29);
             this.lblTitre.TabIndex = 0;
-            this.lblTitre.Text = "Menu principal - Admin";
+            this.lblTitre.Text = "Menu:";
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(80, 80);
+            this.btnDashboard.Location = new System.Drawing.Point(59, 105);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(340, 40);
+            this.btnDashboard.Size = new System.Drawing.Size(480, 45);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@ namespace Noureddine_S2_EF
             // 
             // btnAdherents
             // 
-            this.btnAdherents.Location = new System.Drawing.Point(80, 130);
+            this.btnAdherents.Location = new System.Drawing.Point(59, 155);
             this.btnAdherents.Name = "btnAdherents";
-            this.btnAdherents.Size = new System.Drawing.Size(340, 40);
+            this.btnAdherents.Size = new System.Drawing.Size(480, 45);
             this.btnAdherents.TabIndex = 2;
             this.btnAdherents.Text = "Gestion des adhérents";
             this.btnAdherents.UseVisualStyleBackColor = true;
@@ -58,9 +58,9 @@ namespace Noureddine_S2_EF
             // 
             // btnLivres
             // 
-            this.btnLivres.Location = new System.Drawing.Point(80, 180);
+            this.btnLivres.Location = new System.Drawing.Point(59, 205);
             this.btnLivres.Name = "btnLivres";
-            this.btnLivres.Size = new System.Drawing.Size(340, 40);
+            this.btnLivres.Size = new System.Drawing.Size(480, 45);
             this.btnLivres.TabIndex = 3;
             this.btnLivres.Text = "Gestion des livres";
             this.btnLivres.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@ namespace Noureddine_S2_EF
             // 
             // btnLocations
             // 
-            this.btnLocations.Location = new System.Drawing.Point(80, 230);
+            this.btnLocations.Location = new System.Drawing.Point(59, 255);
             this.btnLocations.Name = "btnLocations";
-            this.btnLocations.Size = new System.Drawing.Size(340, 40);
+            this.btnLocations.Size = new System.Drawing.Size(480, 45);
             this.btnLocations.TabIndex = 4;
             this.btnLocations.Text = "Gestion des locations";
             this.btnLocations.UseVisualStyleBackColor = true;
@@ -78,9 +78,9 @@ namespace Noureddine_S2_EF
             // 
             // btnImpression
             // 
-            this.btnImpression.Location = new System.Drawing.Point(80, 280);
+            this.btnImpression.Location = new System.Drawing.Point(59, 305);
             this.btnImpression.Name = "btnImpression";
-            this.btnImpression.Size = new System.Drawing.Size(340, 40);
+            this.btnImpression.Size = new System.Drawing.Size(480, 45);
             this.btnImpression.TabIndex = 5;
             this.btnImpression.Text = "Impression";
             this.btnImpression.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@ namespace Noureddine_S2_EF
             // btnDeconnexion
             // 
             this.btnDeconnexion.BackColor = System.Drawing.Color.LightCoral;
-            this.btnDeconnexion.Location = new System.Drawing.Point(80, 340);
+            this.btnDeconnexion.Location = new System.Drawing.Point(59, 365);
             this.btnDeconnexion.Name = "btnDeconnexion";
-            this.btnDeconnexion.Size = new System.Drawing.Size(340, 40);
+            this.btnDeconnexion.Size = new System.Drawing.Size(480, 45);
             this.btnDeconnexion.TabIndex = 6;
             this.btnDeconnexion.Text = "Déconnexion";
             this.btnDeconnexion.UseVisualStyleBackColor = false;
@@ -101,7 +101,7 @@ namespace Noureddine_S2_EF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 420);
+            this.ClientSize = new System.Drawing.Size(600, 460);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.btnImpression);
             this.Controls.Add(this.btnLocations);
@@ -116,6 +116,7 @@ namespace Noureddine_S2_EF
             this.Text = "FrmMenu";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

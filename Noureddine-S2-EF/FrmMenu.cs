@@ -8,12 +8,18 @@ namespace Noureddine_S2_EF
         public FrmMenu()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void OuvrirForm(Form f)
+        {
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.ShowDialog(this);
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            FrmDashboard f = new FrmDashboard();
-            f.ShowDialog();
+            OuvrirForm(new FrmDashboard());
         }
 
         private void btnAdherents_Click(object sender, EventArgs e)
@@ -23,20 +29,17 @@ namespace Noureddine_S2_EF
 
         private void btnLivres_Click(object sender, EventArgs e)
         {
-            FrmLivre f = new FrmLivre();
-            f.ShowDialog();
+            OuvrirForm(new FrmLivre());
         }
 
         private void btnLocations_Click(object sender, EventArgs e)
         {
-            FrmLocation f = new FrmLocation();
-            f.ShowDialog();
+            OuvrirForm(new FrmLocation());
         }
 
         private void btnImpression_Click(object sender, EventArgs e)
         {
-            FrmImpression f = new FrmImpression();
-            f.ShowDialog();
+            OuvrirForm(new FrmImpression());
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
