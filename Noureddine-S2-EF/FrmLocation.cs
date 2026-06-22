@@ -13,6 +13,7 @@ namespace Noureddine_S2_EF
 
         DataTable dt;
         int i = 0;
+        int indexLigne = -1;
 
         public FrmLocation()
         {
@@ -22,6 +23,37 @@ namespace Noureddine_S2_EF
         private void FrmLocation_Load(object sender, EventArgs e)
         {
             Afficher();
+            ViderSaisie();
+        }
+
+        private void ViderSaisie()
+        {
+            txtIdLocation.Clear();
+            txtIdLivre.Clear();
+            txtIdAdherent.Clear();
+            txtStatut.Clear();
+            dtpDateLocation.Value = DateTime.Today;
+            dtpDateRetour.Value = DateTime.Today;
+            chkDateRetour.Checked = false;
+            dtpDateRetour.Enabled = false;
+        }
+
+        private void RemplirSaisie(DataGridViewRow row)
+        {
+            txtIdLocation.Text = row.Cells[0].Value.ToString();
+            txtIdLivre.Text = row.Cells[1].Value.ToString();
+            txtIdAdherent.Text = row.Cells[2].Value.ToString();
+            dtpDateLocation.Value = Convert.ToDateTime(row.Cells[3].Value);
+
+            if (row.Cells[4].Value == DBNull.Value)
+                chkDateRetour.Checked = false;
+            else
+            {
+                chkDateRetour.Checked = true;
+                dtpDateRetour.Value = Convert.ToDateTime(row.Cells[4].Value);
+            }
+
+            txtStatut.Text = row.Cells[5].Value.ToString();
         }
 
         private void Afficher()
@@ -42,21 +74,29 @@ namespace Noureddine_S2_EF
         {
             if (dgvLocations.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = dgvLocations.SelectedRows[0];
-                txtIdLocation.Text = row.Cells[0].Value.ToString();
-                txtIdLivre.Text = row.Cells[1].Value.ToString();
-                txtIdAdherent.Text = row.Cells[2].Value.ToString();
-                dtpDateLocation.Value = Convert.ToDateTime(row.Cells[3].Value);
+                RemplirSaisie(dgvLocations.SelectedRows[0]);
+            }
+            else
+            {
+                ViderSaisie();
+            }
+        }
 
-                if (row.Cells[4].Value == DBNull.Value)
-                    chkDateRetour.Checked = false;
-                else
-                {
-                    chkDateRetour.Checked = true;
-                    dtpDateRetour.Value = Convert.ToDateTime(row.Cells[4].Value);
-                }
+        private void dgvLocations_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
 
-                txtStatut.Text = row.Cells[5].Value.ToString();
+            // 2e clic sur la même ligne = désélectionner
+            if (indexLigne == e.RowIndex)
+            {
+                dgvLocations.ClearSelection();
+                indexLigne = -1;
+                ViderSaisie();
+            }
+            else
+            {
+                indexLigne = e.RowIndex;
             }
         }
 
@@ -86,6 +126,9 @@ namespace Noureddine_S2_EF
 
             con.Close();
             Afficher();
+            dgvLocations.ClearSelection();
+            indexLigne = -1;
+            ViderSaisie();
             MessageBox.Show("Ajout effectué.");
         }
 
@@ -119,6 +162,9 @@ namespace Noureddine_S2_EF
             if (txtRecherche.Text == "")
             {
                 Afficher();
+                dgvLocations.ClearSelection();
+                indexLigne = -1;
+                ViderSaisie();
                 return;
             }
 
@@ -148,6 +194,9 @@ namespace Noureddine_S2_EF
 
             con.Close();
             Afficher();
+            dgvLocations.ClearSelection();
+            indexLigne = -1;
+            ViderSaisie();
             MessageBox.Show("Suppression effectuée.");
         }
 
