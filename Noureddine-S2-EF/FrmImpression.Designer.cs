@@ -171,7 +171,6 @@ namespace Noureddine_S2_EF
             this.Name = "FrmImpression";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmImpression";
-            this.Load += new System.EventHandler(this.FrmImpression_Load);
             this.grpMenu.ResumeLayout(false);
             this.grpMenu.PerformLayout();
             this.grpLocationsDates.ResumeLayout(false);

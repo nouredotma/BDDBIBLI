@@ -6,6 +6,9 @@ namespace Noureddine_S2_EF
 {
     public partial class FrmDashboard : Form
     {
+        // Chaine de connexion MySQL (modifier pwd si nécessaire)
+        string chaine = "server=127.0.0.1;database=bddbibli;uid=root;pwd=;";
+
         public FrmDashboard()
         {
             InitializeComponent();
@@ -13,34 +16,24 @@ namespace Noureddine_S2_EF
 
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
-            try
-            {
-                using (var conn = DatabaseHelper.GetConnection())
-                {
-                    conn.Open();
-                    lblNbAdherents.Text = GetCount(conn, "adherent").ToString();
-                    lblNbLivres.Text = GetCount(conn, "livre").ToString();
-                    lblNbLocations.Text = GetCount(conn, "location").ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur de connexion : " + ex.Message, "Erreur",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+            MySqlConnection con = new MySqlConnection(chaine);
+            con.Open();
 
-        private static int GetCount(MySqlConnection conn, string table)
-        {
-            using (var cmd = new MySqlCommand("SELECT COUNT(*) FROM " + table, conn))
-            {
-                return Convert.ToInt32(cmd.ExecuteScalar());
-            }
+            MySqlCommand cmd1 = new MySqlCommand("SELECT COUNT(*) FROM adherent", con);
+            lblNbAdherents.Text = cmd1.ExecuteScalar().ToString();
+
+            MySqlCommand cmd2 = new MySqlCommand("SELECT COUNT(*) FROM livre", con);
+            lblNbLivres.Text = cmd2.ExecuteScalar().ToString();
+
+            MySqlCommand cmd3 = new MySqlCommand("SELECT COUNT(*) FROM location", con);
+            lblNbLocations.Text = cmd3.ExecuteScalar().ToString();
+
+            con.Close();
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }

@@ -10,36 +10,33 @@ namespace Noureddine_S2_EF
             InitializeComponent();
         }
 
-        private void OpenChild(Form form)
-        {
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.ShowDialog();
-        }
-
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            OpenChild(new FrmDashboard());
+            FrmDashboard f = new FrmDashboard();
+            f.ShowDialog();
         }
 
         private void btnAdherents_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La gestion des adhérents n'est pas demandée dans l'examen.",
-                "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("La gestion des adhérents n'est pas demandée.");
         }
 
         private void btnLivres_Click(object sender, EventArgs e)
         {
-            OpenChild(new FrmLivre());
+            FrmLivre f = new FrmLivre();
+            f.ShowDialog();
         }
 
         private void btnLocations_Click(object sender, EventArgs e)
         {
-            OpenChild(new FrmLocation());
+            FrmLocation f = new FrmLocation();
+            f.ShowDialog();
         }
 
         private void btnImpression_Click(object sender, EventArgs e)
         {
-            OpenChild(new FrmImpression());
+            FrmImpression f = new FrmImpression();
+            f.ShowDialog();
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)

@@ -1,6 +1,3 @@
--- Script complet pour phpMyAdmin (examen BDDBIBLI)
--- Corrige les erreurs du PDF et améliore le fichier bddbibli.sql fourni
-
 CREATE DATABASE IF NOT EXISTS bddbibli
   DEFAULT CHARACTER SET utf8mb4
   COLLATE utf8mb4_general_ci;
