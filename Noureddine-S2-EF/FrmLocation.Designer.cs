@@ -50,14 +50,15 @@ namespace Noureddine_S2_EF
             this.dgvLocations.AllowUserToAddRows = false;
             this.dgvLocations.AllowUserToDeleteRows = false;
             this.dgvLocations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocations.Location = new System.Drawing.Point(12, 12);
+            this.dgvLocations.Location = new System.Drawing.Point(12, 255);
             this.dgvLocations.MultiSelect = false;
             this.dgvLocations.Name = "dgvLocations";
             this.dgvLocations.ReadOnly = true;
             this.dgvLocations.RowHeadersWidth = 51;
             this.dgvLocations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocations.Size = new System.Drawing.Size(880, 200);
-            this.dgvLocations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvLocations.Size = new System.Drawing.Size(880, 213);
+            this.dgvLocations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLocations.TabIndex = 0;
             dgvLocations.SelectionChanged += new System.EventHandler(this.dgvLocations_SelectionChanged);
@@ -78,7 +79,7 @@ namespace Noureddine_S2_EF
             this.grpSaisie.Controls.Add(this.lblIdAdherent);
             this.grpSaisie.Controls.Add(this.lblIdLivre);
             this.grpSaisie.Controls.Add(this.lblIdLocation);
-            this.grpSaisie.Location = new System.Drawing.Point(12, 230);
+            this.grpSaisie.Location = new System.Drawing.Point(12, 12);
             this.grpSaisie.Name = "grpSaisie";
             this.grpSaisie.Size = new System.Drawing.Size(880, 155);
             this.grpSaisie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -200,7 +201,7 @@ namespace Noureddine_S2_EF
             // btnAjouter
             // 
             this.btnAjouter.BackColor = System.Drawing.Color.LightGreen;
-            this.btnAjouter.Location = new System.Drawing.Point(12, 420);
+            this.btnAjouter.Location = new System.Drawing.Point(12, 205);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(110, 40);
             this.btnAjouter.TabIndex = 2;
@@ -211,7 +212,7 @@ namespace Noureddine_S2_EF
             // btnModifier
             // 
             this.btnModifier.BackColor = System.Drawing.Color.LightBlue;
-            this.btnModifier.Location = new System.Drawing.Point(128, 420);
+            this.btnModifier.Location = new System.Drawing.Point(128, 205);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(110, 40);
             this.btnModifier.TabIndex = 3;
@@ -222,7 +223,7 @@ namespace Noureddine_S2_EF
             // btnRechercher
             // 
             this.btnRechercher.BackColor = System.Drawing.Color.Khaki;
-            this.btnRechercher.Location = new System.Drawing.Point(244, 420);
+            this.btnRechercher.Location = new System.Drawing.Point(244, 205);
             this.btnRechercher.Name = "btnRechercher";
             this.btnRechercher.Size = new System.Drawing.Size(110, 40);
             this.btnRechercher.TabIndex = 4;
@@ -233,7 +234,7 @@ namespace Noureddine_S2_EF
             // btnSupprimer
             // 
             this.btnSupprimer.BackColor = System.Drawing.Color.LightCoral;
-            this.btnSupprimer.Location = new System.Drawing.Point(360, 420);
+            this.btnSupprimer.Location = new System.Drawing.Point(360, 205);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(110, 40);
             this.btnSupprimer.TabIndex = 5;
@@ -243,7 +244,7 @@ namespace Noureddine_S2_EF
             // 
             // btnImprimer
             // 
-            this.btnImprimer.Location = new System.Drawing.Point(476, 420);
+            this.btnImprimer.Location = new System.Drawing.Point(476, 205);
             this.btnImprimer.Name = "btnImprimer";
             this.btnImprimer.Size = new System.Drawing.Size(110, 40);
             this.btnImprimer.TabIndex = 6;
@@ -253,7 +254,7 @@ namespace Noureddine_S2_EF
             // 
             // txtRecherche
             // 
-            this.txtRecherche.Location = new System.Drawing.Point(700, 392);
+            this.txtRecherche.Location = new System.Drawing.Point(700, 177);
             this.txtRecherche.Name = "txtRecherche";
             this.txtRecherche.Size = new System.Drawing.Size(192, 22);
             this.txtRecherche.TabIndex = 7;
@@ -261,7 +262,7 @@ namespace Noureddine_S2_EF
             // lblRecherche
             // 
             this.lblRecherche.AutoSize = true;
-            this.lblRecherche.Location = new System.Drawing.Point(590, 395);
+            this.lblRecherche.Location = new System.Drawing.Point(590, 180);
             this.lblRecherche.Name = "lblRecherche";
             this.lblRecherche.Size = new System.Drawing.Size(94, 16);
             this.lblRecherche.TabIndex = 8;
